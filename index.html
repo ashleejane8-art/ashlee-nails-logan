@@ -1,0 +1,1376 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="color-scheme" content="dark light" />
+
+  <title>Ashlee Nails | Logan, UT</title>
+  <meta name="description" content="High-end nails in Logan, UT. Ashlee is a Paul Mitchell student—booking is through the Paul Mitchell clinic only. Use chat to get matched." />
+
+  <!-- Canonical + Social Preview (placeholders you can swap) -->
+  <link rel="canonical" href="https://example.com/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Ashlee Nails | Logan, UT" />
+  <meta property="og:description" content="High-end nails in Logan, UT. Paul Mitchell clinic booking only. Use chat to get matched in under a minute." />
+  <meta property="og:url" content="https://example.com/" />
+  <meta property="og:image" content="https://example.com/assets/og-image.jpg" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Ashlee Nails | Logan, UT" />
+  <meta name="twitter:description" content="High-end nails in Logan, UT. Paul Mitchell clinic booking only. Use chat to get matched in under a minute." />
+  <meta name="twitter:image" content="https://example.com/assets/og-image.jpg" />
+
+  <!-- Tiny inline SVG favicon (no external files required) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop stop-color='%239173ff'/%3E%3Cstop offset='1' stop-color='%23ffbb7d'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x='6' y='6' width='52' height='52' rx='16' fill='url(%23g)'/%3E%3Cpath d='M20 36c6-14 18-18 24-8' fill='none' stroke='rgba(255,255,255,.9)' stroke-width='4' stroke-linecap='round'/%3E%3Ccircle cx='25' cy='26' r='3' fill='rgba(255,255,255,.85)'/%3E%3C/svg%3E" />
+
+  <!--
+    robots.txt + sitemap.xml
+    - This ZIP includes simple placeholder files for both.
+    - Update example.com to your Netlify URL or custom domain after deploy.
+  -->
+
+    <style>
+    /*
+      STYLE LOCK — Option A (Quiet Luxury)
+
+      :root tokens (do not change):
+      --bg: #0b0d12;
+      --surface: rgba(255,255,255,.06);
+      --surface2: rgba(255,255,255,.08);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.68);
+      --border: rgba(255,255,255,.12);
+      --accent: #9173ff;        /* lavender */
+      --accent2: #ffbb7d;       /* champagne */
+      --good: #2ecc71;
+      --warn: #f39c12;
+      --bad: #e74c3c;
+      --shadow: 0 12px 38px rgba(0,0,0,.55);
+      --radius: 18px;
+      --radius2: 26px;
+      --focus: 0 0 0 3px rgba(255,255,255,.18), 0 0 0 6px rgba(145,115,255,.22);
+    */
+
+    :root{
+      --bg: #0b0d12;
+      --surface: rgba(255,255,255,.06);
+      --surface2: rgba(255,255,255,.08);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.68);
+      --border: rgba(255,255,255,.12);
+      --accent: #9173ff;        /* lavender */
+      --accent2: #ffbb7d;       /* champagne */
+      --good: #2ecc71;
+      --warn: #f39c12;
+      --bad: #e74c3c;
+      --shadow: 0 12px 38px rgba(0,0,0,.55);
+      --radius: 18px;
+      --radius2: 26px;
+      --focus: 0 0 0 3px rgba(255,255,255,.18), 0 0 0 6px rgba(145,115,255,.22);
+      --max: 1120px;
+    }
+
+    *{ box-sizing: border-box; }
+    html,body{ height: 100%; }
+
+    body{
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color: var(--text);
+      background:
+        radial-gradient(1100px 520px at 10% -10%, color-mix(in srgb, var(--accent) 22%, transparent), transparent 55%),
+        radial-gradient(900px 420px at 90% 10%, color-mix(in srgb, var(--accent2) 14%, transparent), transparent 55%),
+        radial-gradient(900px 420px at 60% 120%, color-mix(in srgb, var(--accent) 10%, transparent), transparent 55%),
+        linear-gradient(180deg, var(--bg), var(--bg));
+      letter-spacing: .2px;
+    }
+
+    a{ color: inherit; text-decoration: none; }
+    a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible{
+      outline: none;
+      box-shadow: var(--focus);
+      border-radius: 12px;
+    }
+
+    .wrap{ max-width: var(--max); margin: 0 auto; padding: 22px 16px 56px; }
+
+    /* Top bar */
+    .top{
+      position: sticky; top: 0;
+      backdrop-filter: blur(14px);
+      background: color-mix(in srgb, var(--bg) 78%, transparent);
+      border-bottom: 1px solid var(--border);
+      z-index: 30;
+    }
+    .top .wrap{ padding: 14px 16px; }
+
+    .nav{ display:flex; align-items:center; justify-content:space-between; gap: 12px; }
+
+    .brand{ display:flex; align-items:center; gap: 10px; min-width: 0; }
+
+    .mark{
+      width: 36px; height: 36px; border-radius: 12px;
+      background:
+        radial-gradient(14px 14px at 35% 35%, color-mix(in srgb, var(--text) 60%, transparent), transparent 55%),
+        linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      flex: 0 0 auto;
+    }
+
+    .brand h1{
+      font-size: 14px; margin:0; line-height: 1.1;
+      white-space: nowrap; overflow:hidden; text-overflow: ellipsis;
+    }
+    .brand p{
+      margin: 2px 0 0; font-size: 12px; color: var(--muted);
+      white-space: nowrap; overflow:hidden; text-overflow: ellipsis;
+    }
+
+    .links{ display:none; gap: 10px; align-items:center; }
+    .links a{
+      font-size: 13px; color: var(--muted);
+      padding: 10px 10px; border-radius: 12px;
+      border: 1px solid transparent;
+      transition: background .12s ease, border-color .12s ease, color .12s ease;
+    }
+    .links a:hover{
+      color: var(--text);
+      border-color: var(--border);
+      background: var(--surface);
+    }
+
+    /* Buttons */
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap: 10px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      padding: 12px 14px;
+      border-radius: 14px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: transform .12s ease, background .12s ease, border-color .12s ease, color .12s ease;
+      user-select:none;
+      white-space: nowrap;
+    }
+    .btn:hover{
+      transform: translateY(-1px);
+      background: var(--surface2);
+      border-color: var(--border);
+    }
+    .btn.primary{
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      border-color: var(--border);
+      color: var(--bg);
+      font-weight: 650;
+      box-shadow: var(--shadow);
+    }
+    .btn.ghost{
+      background: var(--surface);
+      border-color: var(--border);
+    }
+    .btn.small{
+      padding: 10px 12px;
+      font-size: 13px;
+      border-radius: 12px;
+    }
+    .btn[disabled]{ opacity:.6; cursor:not-allowed; transform:none; }
+
+    /* Hero */
+    .hero{ padding: 26px 0 8px; }
+    .hero-grid{ display:grid; grid-template-columns: 1fr; gap: 14px; }
+
+    .badge{
+      display:inline-flex; align-items:center; gap: 8px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      padding: 8px 10px;
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 12px;
+      width: fit-content;
+    }
+    .dot{
+      width: 8px; height: 8px; border-radius: 999px;
+      background: var(--good);
+      box-shadow: 0 0 0 4px color-mix(in srgb, var(--good) 18%, transparent);
+    }
+
+    .hero h2{
+      margin: 14px 0 10px;
+      font-size: 32px;
+      line-height: 1.08;
+      letter-spacing: -0.6px;
+    }
+    .hero p{
+      margin: 0 0 16px;
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.55;
+      max-width: 62ch;
+    }
+    .cta-row{ display:flex; flex-wrap: wrap; gap: 10px; align-items:center; }
+
+    .mini{ margin-top: 14px; display:grid; grid-template-columns: 1fr; gap: 10px; }
+
+    .pill{
+      padding: 12px 14px;
+      border-radius: var(--radius);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.4;
+    }
+    .pill strong{ color: var(--text); font-weight: 650; }
+    .pill.important{
+      border-color: color-mix(in srgb, var(--warn) 28%, transparent);
+      background: color-mix(in srgb, var(--warn) 16%, transparent);
+      color: var(--text);
+    }
+
+    /* Sections */
+    section{ margin-top: 22px; }
+    .section-head{
+      display:flex; align-items:flex-end; justify-content:space-between; gap: 12px;
+      margin-bottom: 12px;
+    }
+    .section-head h3{ margin:0; font-size: 18px; letter-spacing: -.2px; }
+    .section-head p{ margin:0; color: var(--muted); font-size: 13px; }
+
+    /* Cards */
+    .card{
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius2);
+      box-shadow: var(--shadow);
+    }
+
+    /* Portfolio */
+    .grid{ display:grid; grid-template-columns: 1fr; gap: 12px; }
+    .tile{
+      padding: 12px;
+      border-radius: var(--radius2);
+      border: 1px solid var(--border);
+      background: var(--surface);
+      overflow:hidden;
+    }
+    .thumb{
+      height: 170px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background:
+        radial-gradient(220px 120px at 20% 20%, color-mix(in srgb, var(--accent) 28%, transparent), transparent 55%),
+        radial-gradient(240px 120px at 80% 30%, color-mix(in srgb, var(--accent2) 18%, transparent), transparent 55%),
+        linear-gradient(180deg, var(--surface2), var(--surface));
+      display:flex; align-items:flex-end; justify-content:space-between;
+      padding: 14px;
+    }
+    .thumb span{
+      font-size: 12px;
+      color: var(--text);
+      background: color-mix(in srgb, var(--bg) 72%, transparent);
+      border: 1px solid var(--border);
+      padding: 6px 10px;
+      border-radius: 999px;
+      backdrop-filter: blur(10px);
+    }
+    .tile h4{ margin: 12px 2px 4px; font-size: 14px; }
+    .tile p{ margin: 0 2px 2px; color: var(--muted); font-size: 13px; line-height: 1.45; }
+
+    /* Booking steps */
+    .steps{ padding: 16px; }
+    .step{
+      display:flex; gap: 12px;
+      padding: 14px 10px;
+      border-top: 1px solid var(--border);
+    }
+    .step:first-child{ border-top: none; }
+
+    .num{
+      width: 34px; height: 34px;
+      border-radius: 14px;
+      display:flex; align-items:center; justify-content:center;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      flex: 0 0 auto;
+      font-weight: 750;
+      color: var(--text);
+    }
+    .step h5{ margin: 0 0 3px; font-size: 14px; }
+    .step p{ margin: 0; color: var(--muted); font-size: 13px; line-height: 1.5; }
+
+    .callout{
+      margin-top: 12px;
+      padding: 14px 14px;
+      border-radius: var(--radius);
+      background: color-mix(in srgb, var(--accent) 10%, var(--surface));
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+    .callout.urgent{
+      border-color: color-mix(in srgb, var(--warn) 30%, transparent);
+      background: color-mix(in srgb, var(--warn) 18%, transparent);
+      color: var(--text);
+    }
+
+    .list{
+      margin: 8px 0 0 0;
+      padding: 0 0 0 18px;
+      color: var(--text);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    /* FAQ */
+    .faq{ padding: 6px 14px 14px; }
+    details{
+      border-top: 1px solid var(--border);
+      padding: 12px 0;
+    }
+    details:first-child{ border-top:none; }
+    summary{
+      cursor:pointer;
+      list-style:none;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--text);
+      padding: 6px 2px;
+    }
+    summary::-webkit-details-marker{ display:none; }
+    .chev{
+      width: 22px; height: 22px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      display:flex; align-items:center; justify-content:center;
+      flex: 0 0 auto;
+      transition: transform .15s ease;
+    }
+    details[open] .chev{ transform: rotate(180deg); }
+    .faq p{
+      margin: 6px 2px 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+      max-width: 80ch;
+    }
+
+    /* Footer */
+    footer{
+      margin-top: 30px;
+      padding-top: 18px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+    .foot-row{
+      display:flex; flex-wrap: wrap;
+      gap: 10px 14px;
+      align-items:center;
+      justify-content:space-between;
+    }
+    .foot-row a{
+      text-decoration: underline;
+      text-decoration-color: color-mix(in srgb, var(--muted) 40%, transparent);
+    }
+    .foot-row a:hover{ color: var(--text); }
+
+    /* Modal */
+    .modal-backdrop{
+      position: fixed; inset: 0;
+      background: color-mix(in srgb, var(--bg) 62%, transparent);
+      display:none;
+      align-items: flex-end;
+      justify-content: center;
+      padding: 14px;
+      z-index: 60;
+    }
+    .modal-backdrop[data-open="true"]{ display:flex; }
+
+    .modal{
+      width: 100%;
+      max-width: 760px;
+      border-radius: 22px;
+      border: 1px solid var(--border);
+      background:
+        radial-gradient(800px 240px at 10% 0%, color-mix(in srgb, var(--accent) 18%, transparent), transparent 60%),
+        color-mix(in srgb, var(--bg) 90%, transparent);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+
+    .modal-head{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 12px;
+      padding: 14px 14px 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .modal-title{ min-width: 0; }
+    .modal-title strong{
+      display:block;
+      font-size: 14px;
+      letter-spacing: -.2px;
+    }
+    .modal-title span{
+      display:block;
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 2px;
+      line-height: 1.4;
+    }
+
+    .icon-btn{
+      width: 40px; height: 40px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      cursor:pointer;
+      display:flex; align-items:center; justify-content:center;
+      transition: background .12s ease, transform .12s ease;
+    }
+    .icon-btn:hover{ background: var(--surface2); transform: translateY(-1px); }
+    .icon-btn svg, .chev svg{ color: var(--text); }
+
+
+    .modal-body{ padding: 14px; }
+
+    /* Required mount point */
+    #nail-bot{ padding: 0; }
+
+    /* Chat-style intake */
+    .chat-shell{
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background: var(--surface);
+      overflow:hidden;
+      min-height: 470px;
+      display:flex;
+      flex-direction: column;
+    }
+
+    .chat-topbar{
+      padding: 12px 12px;
+      border-bottom: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 12px;
+      display:flex; align-items:center; justify-content:space-between;
+      gap: 10px;
+    }
+
+    .status{ display:inline-flex; align-items:center; gap: 8px; min-width: 0; }
+    .status i{
+      width: 8px; height: 8px; border-radius: 999px;
+      background: var(--good);
+      box-shadow: 0 0 0 4px color-mix(in srgb, var(--good) 18%, transparent);
+      display:inline-block;
+      flex: 0 0 auto;
+    }
+    .status span{ white-space: nowrap; overflow:hidden; text-overflow: ellipsis; }
+
+    .chat-log{
+      padding: 14px;
+      gap: 10px;
+      display:flex;
+      flex-direction: column;
+      overflow:auto;
+      flex: 1;
+      scroll-behavior: smooth;
+    }
+
+    .bubble{
+      max-width: 92%;
+      border-radius: 16px;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      font-size: 13px;
+      line-height: 1.45;
+      box-shadow: var(--shadow);
+    }
+    .bubble.you{
+      margin-left: auto;
+      background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 28%, transparent), color-mix(in srgb, var(--accent2) 18%, transparent));
+      border-color: var(--border);
+      color: var(--text);
+    }
+    .meta{ font-size: 11px; color: var(--muted); margin-top: 6px; }
+
+    .chat-input{
+      border-top: 1px solid var(--border);
+      padding: 12px;
+      display:flex;
+      flex-direction: column;
+      gap: 10px;
+      background: color-mix(in srgb, var(--bg) 40%, transparent);
+    }
+
+    .form-grid{ display:grid; grid-template-columns: 1fr; gap: 10px; }
+
+    .field label{
+      display:block;
+      font-size: 12px;
+      color: color-mix(in srgb, var(--text) 78%, transparent);
+      margin: 0 0 6px 2px;
+    }
+
+    .control{
+      width: 100%;
+      padding: 12px 12px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      font-size: 14px;
+    }
+    .control::placeholder{ color: color-mix(in srgb, var(--muted) 70%, transparent); }
+    textarea.control{ min-height: 92px; resize: vertical; }
+
+    .help{
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-top: 6px;
+    }
+
+    .inline-note{
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.35;
+      margin: 0 2px;
+    }
+
+    .inline-error{
+      font-size: 12px;
+      color: color-mix(in srgb, var(--bad) 92%, transparent);
+      line-height: 1.35;
+      margin: 6px 2px 0;
+      display:none;
+    }
+    .inline-error[data-show="true"]{ display:block; }
+
+    .row{
+      display:flex; flex-wrap: wrap;
+      gap: 10px;
+      align-items:center;
+      justify-content:space-between;
+    }
+
+    .hint{
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    .msg{
+      border-radius: 14px;
+      padding: 10px 12px;
+      font-size: 13px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+    }
+    .msg.good{
+      border-color: color-mix(in srgb, var(--good) 35%, transparent);
+      background: color-mix(in srgb, var(--good) 14%, transparent);
+    }
+    .msg.bad{
+      border-color: color-mix(in srgb, var(--bad) 40%, transparent);
+      background: color-mix(in srgb, var(--bad) 14%, transparent);
+    }
+
+    .privacy{
+      border-radius: 14px;
+      padding: 10px 12px;
+      font-size: 12px;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      background: var(--surface);
+      line-height: 1.45;
+    }
+    .privacy strong{ color: var(--text); }
+
+    /* Honeypot (offscreen) */
+    .hp{
+      position: absolute !important;
+      left: -10000px !important;
+      top: auto !important;
+      width: 1px !important;
+      height: 1px !important;
+      overflow: hidden !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+    }
+
+    /* Desktop enhancements */
+    @media (min-width: 760px){
+      .wrap{ padding: 24px 20px 64px; }
+      .hero{ padding-top: 42px; }
+      .hero-grid{
+        grid-template-columns: 1.05fr .95fr;
+        align-items: start;
+        gap: 18px;
+      }
+      .hero h2{ font-size: 44px; }
+      .mini{ grid-template-columns: 1fr 1fr; }
+      .grid{ grid-template-columns: repeat(3, 1fr); }
+      .thumb{ height: 190px; }
+      .modal-backdrop{ align-items: center; }
+      .chat-shell{ min-height: 520px; }
+      .links{ display:flex; }
+      /* Hide the extra mobile CTA in desktop */
+      #openChatTopMobile{ display:none !important; }
+    }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce){
+      *{ transition: none !important; scroll-behavior: auto !important; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Top Nav -->
+  <header class="top">
+    <div class="wrap">
+      <div class="nav" aria-label="Primary">
+        <a class="brand" href="#top" aria-label="Ashlee Nails home">
+          <div class="mark" aria-hidden="true"></div>
+          <div>
+            <h1>Ashlee Nails</h1>
+            <p>Logan, UT • Paul Mitchell clinic booking only</p>
+          </div>
+        </a>
+
+        <nav class="links" aria-label="Site sections">
+          <a href="#portfolio">Portfolio</a>
+          <a href="#booking">Booking</a>
+          <a href="#faq">FAQ</a>
+          <button class="btn primary" id="openChatTop" type="button">Chat to get matched</button>
+        </nav>
+
+        <!-- Mobile: single primary button -->
+        <button class="btn primary" id="openChatTopMobile" type="button" style="display:inline-flex;">Chat to get matched</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top" class="wrap">
+    <!-- Hero -->
+    <section class="hero" aria-label="Hero">
+      <div class="hero-grid">
+        <div>
+          <div class="badge"><span class="dot" aria-hidden="true"></span><span>High-end sets • Clean shaping • Glossy finishes</span></div>
+          <h2>Elevated nails, designed for your lifestyle.</h2>
+          <p>
+            I’m Ashlee, a Paul Mitchell student in Logan. I specialize in polished, modern nail looks—whether you want
+            soft neutrals, crisp French, or something more statement.
+          </p>
+
+          <div class="pill important" role="note" aria-label="Booking constraint">
+            <strong>Clinic-only booking:</strong> appointments must be booked through the Paul Mitchell clinic.
+            <br><strong>Submitting this form is NOT an appointment booking.</strong>
+          </div>
+
+          <div class="cta-row" role="group" aria-label="Primary calls to action">
+            <button class="btn primary" id="openChatHero" type="button">Chat to get matched</button>
+            <a class="btn" href="#booking">How booking works</a>
+            <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Paul%20Mitchell%20The%20School%20Logan%2C%20185%20E%201250%20N%20Ste.%20200%2C%20Logan%2C%20UT%2084341" target="_blank" rel="noopener">Get directions</a>
+            <a class="btn" href="#portfolio">View portfolio</a>
+          </div>
+
+          <div class="cta-row" style="margin-top:10px;" role="group" aria-label="Instagram calls to action">
+            <!-- Easy to swap: update data-ig-url / href -->
+            <a class="btn ghost" id="followInstagram" href="https://www.instagram.com/ashes_nails_/" target="_blank" rel="noopener">Follow on Instagram</a>
+            <a class="btn" id="dmInstagram" href="https://www.instagram.com/ashes_nails_/" target="_blank" rel="noopener">DM Ashlee</a>
+          </div>
+
+          <div class="mini" aria-label="Highlights">
+            <div class="pill"><strong>Best for:</strong> students, professionals, events, and clean everyday looks.</div>
+            <div class="pill"><strong>Fast match:</strong> tell me your vibe + timing and I’ll recommend the right clinic service.</div>
+          </div>
+        </div>
+
+        <div class="card" style="padding:16px;">
+          <div class="section-head" style="margin-bottom:10px;">
+            <h3 style="font-size:16px;margin:0;">Quick match</h3>
+            <p>30–60 seconds</p>
+          </div>
+          <div class="pill important" style="margin:0;">
+            <strong>Important:</strong> This page helps you get matched to the right service.
+            <br><strong>It does not book an appointment.</strong>
+          </div>
+          <div class="cta-row" style="margin-top:12px;">
+            <button class="btn primary" id="openChatCard" type="button">Start matching</button>
+            <a class="btn" href="#faq">Read FAQ</a>
+          </div>
+          <div class="callout" style="margin-top:12px;">
+            <strong>What to bring:</strong>
+            <ul class="list">
+              <li>Inspo pics (2–3 screenshots)</li>
+              <li>Your current set details (gel/acrylic) + if you need removal</li>
+              <li>Preferred shape/length + any budget constraints</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section id="portfolio" aria-label="Portfolio">
+      <div class="section-head">
+        <div>
+          <h3>Portfolio</h3>
+          <p>Replace these tiles with your real photos when ready.</p>
+        </div>
+      </div>
+
+      <div class="grid" role="list">
+        <article class="tile" role="listitem">
+          <div class="thumb" aria-label="Portfolio placeholder image"><span>Soft neutral</span><span>Short</span></div>
+          <h4>Clean nude set</h4>
+          <p>Simple, glossy, and flattering—perfect for everyday.</p>
+        </article>
+
+        <article class="tile" role="listitem">
+          <div class="thumb" aria-label="Portfolio placeholder image"><span>French</span><span>Almond</span></div>
+          <h4>Modern French</h4>
+          <p>Crisp linework and balanced proportions.</p>
+        </article>
+
+        <article class="tile" role="listitem">
+          <div class="thumb" aria-label="Portfolio placeholder image"><span>Chrome</span><span>Medium</span></div>
+          <h4>Glass chrome</h4>
+          <p>High shine with an elevated, minimal finish.</p>
+        </article>
+
+        <article class="tile" role="listitem">
+          <div class="thumb" aria-label="Portfolio placeholder image"><span>Seasonal</span><span>Short</span></div>
+          <h4>Seasonal accent</h4>
+          <p>Subtle accent nail for holidays and events.</p>
+        </article>
+
+        <article class="tile" role="listitem">
+          <div class="thumb" aria-label="Portfolio placeholder image"><span>Gel</span><span>Natural</span></div>
+          <h4>Natural gel overlay</h4>
+          <p>Strength + structure without going extra long.</p>
+        </article>
+
+        <article class="tile" role="listitem">
+          <div class="thumb" aria-label="Portfolio placeholder image"><span>Art</span><span>Custom</span></div>
+          <h4>Minimal line art</h4>
+          <p>Small details that read expensive, not busy.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Booking clarity -->
+    <section id="booking" aria-label="Booking information">
+      <div class="section-head">
+        <div>
+          <h3>BOOKING (Paul Mitchell clinic only)</h3>
+          <p>Official clinic process • please read</p>
+        </div>
+        <button class="btn" id="openChatBooking" type="button">Chat to get matched</button>
+      </div>
+
+      <div class="card steps">
+        <div class="callout urgent" role="note" aria-label="Not a booking notice">
+          <strong>Submitting this form is NOT an appointment booking.</strong>
+          This request helps Ashlee confirm the right service and reach out — your appointment is scheduled through Guest Services.
+        </div>
+
+        <div class="step">
+          <div class="num">1</div>
+          <div>
+            <h5>Submit your request (this page)</h5>
+            <p>Share your vibe, timing, and whether you need removal. Ashlee will reach out to confirm what to book.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="num">2</div>
+          <div>
+            <h5>Schedule through Paul Mitchell The School – Logan Guest Services</h5>
+            <p>To schedule your appointment, book through Paul Mitchell The School – Logan Guest Services:</p>
+            <ul class="list">
+              <li><strong>Call:</strong> (435) 752-3599</li>
+              <li><strong>Or:</strong> use the “Book a Service” button on the Paul Mitchell Logan website (link placeholder ok)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="num">3</div>
+          <div>
+            <h5>Request Ashlee Christensen by name</h5>
+            <p>When booking, request <strong>Ashlee Christensen</strong> by name.</p>
+          </div>
+        </div>
+
+        <div class="callout" style="margin-top:12px;">
+          <strong>What to bring:</strong>
+          <ul class="list">
+            <li>Inspo pics (2–3 screenshots)</li>
+            <li>Your current set details (gel/acrylic) + if you need removal</li>
+            <li>Preferred shape/length + finish (gloss/matte)</li>
+          </ul>
+        </div>
+
+        <div class="cta-row" style="margin-top:12px; padding: 0 16px 16px;">
+          <a class="btn" href="https://example.com/" target="_blank" rel="noopener">Paul Mitchell Logan — Book a Service</a>
+          <a class="btn ghost" href="tel:+14357523599">Call (435) 752-3599</a>
+          <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Paul%20Mitchell%20The%20School%20Logan%2C%20185%20E%201250%20N%20Ste.%20200%2C%20Logan%2C%20UT%2084341" target="_blank" rel="noopener">Get directions</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" aria-label="Frequently asked questions">
+      <div class="section-head">
+        <div>
+          <h3>FAQ</h3>
+          <p>Clear answers up front.</p>
+        </div>
+      </div>
+
+      <div class="card faq">
+        <details>
+          <summary>
+            <span>Can I book directly with Ashlee?</span>
+            <span class="chev" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </summary>
+          <p>
+            Not at this time. Ashlee is a Paul Mitchell student, so appointments must be booked through the clinic only.
+            This site helps you get matched to the correct service and show up prepared.
+          </p>
+        </details>
+
+        <details>
+          <summary>
+            <span>Does submitting the form book an appointment?</span>
+            <span class="chev" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </summary>
+          <p>
+            No. Submitting the form is a request to get matched. Ashlee will reach out, then you’ll book through the Paul Mitchell clinic process.
+          </p>
+        </details>
+
+        <details>
+          <summary>
+            <span>How do I know what service to book?</span>
+            <span class="chev" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </summary>
+          <p>
+            Use “Chat to get matched.” Share your goal (simple/statement/French/art), your timing, and whether you need removal.
+            You’ll get a recommendation you can use when booking through the clinic.
+          </p>
+        </details>
+
+        <details>
+          <summary>
+            <span>Are prices the same as a private salon?</span>
+            <span class="chev" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </summary>
+          <p>
+            Clinic pricing is set by the school and is typically different from private studio rates.
+            You’ll see exact pricing during the clinic booking process.
+          </p>
+        </details>
+      </div>
+    </section>
+
+    <footer aria-label="Footer">
+      <div class="foot-row">
+        <div>
+          <strong style="color:var(--text)">Ashlee Nails</strong> • Logan, UT
+          <span style="color:var(--muted)"> • </span>
+          Paul Mitchell clinic booking only
+        </div>
+        <div>
+          <a href="#top">Back to top</a>
+          <span style="color:var(--muted)"> • </span>
+          <a href="https://www.google.com/maps/search/?api=1&query=Paul%20Mitchell%20The%20School%20Logan%2C%20185%20E%201250%20N%20Ste.%20200%2C%20Logan%2C%20UT%2084341" target="_blank" rel="noopener">Directions</a>
+          <span style="color:var(--muted)"> • </span>
+          <a href="privacy.html" target="_blank" rel="noopener">Privacy</a>
+        </div>
+      </div>
+      <p style="margin:10px 0 0;">
+        Note: This page is front-end only. Your embedded assistant can later mount into <code style="color:var(--text)">#nail-bot</code>.
+      </p>
+    </footer>
+  </main>
+
+  <!-- Chat Modal -->
+  <div class="modal-backdrop" id="chatBackdrop" data-open="false" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="chatTitle" aria-describedby="chatDesc">
+      <div class="modal-head">
+        <div class="modal-title">
+          <strong id="chatTitle">Chat to get matched</strong>
+          <span id="chatDesc">
+            Quick intake so Ashlee can recommend the right clinic service.
+            <strong style="color:var(--text)">This is not an appointment booking.</strong>
+          </span>
+        </div>
+        <button class="icon-btn" id="closeChat" type="button" aria-label="Close chat">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <!-- Required container -->
+        <div id="nail-bot">
+          <div class="chat-shell" aria-label="Lead intake chat">
+            <div class="chat-topbar" aria-label="Chat status">
+              <div class="status"><i aria-hidden="true"></i><span>Ready to match you • Logan, UT</span></div>
+              <span>Clinic-only booking</span>
+            </div>
+
+            <div class="chat-log" id="chatLog" aria-live="polite">
+              <div class="bubble">
+                Hi — I’ll get you matched to the right service in under a minute.
+                <div class="meta">Reminder: submitting this form is NOT an appointment booking.</div>
+              </div>
+              <div class="bubble">
+                Share your vibe (simple / French / glam / art), timing, and whether you need removal.
+              </div>
+            </div>
+
+            <div class="chat-input">
+              <form id="leadForm" novalidate>
+                <!-- Honeypot: bots fill this -->
+                <div class="hp" aria-hidden="true">
+                  <label>Company <input type="text" name="company" id="hp_company" autocomplete="off" tabindex="-1" /></label>
+                </div>
+
+                <div class="form-grid">
+                  <div class="field">
+                    <label for="name">Name <span style="color:var(--warn)">*</span></label>
+                    <input class="control" id="name" name="name" type="text" autocomplete="name" placeholder="Your name" required />
+                    <div class="inline-error" id="err_name">Please enter your name.</div>
+                  </div>
+
+                  <div class="field">
+                    <label for="phone">Phone (optional)</label>
+                    <input class="control" id="phone" name="phone" type="tel" autocomplete="tel" placeholder="(435) 555-0123" />
+                    <div class="inline-note">Formatted input is fine.</div>
+                  </div>
+
+                  <div class="field">
+                    <label for="instagram">Instagram (optional)</label>
+                    <input class="control" id="instagram" name="instagram" type="text" autocomplete="off" placeholder="@yourhandle" />
+                    <div class="inline-note">Tip: you can paste a handle or an Instagram profile link.</div>
+                  </div>
+
+                  <div class="field">
+                    <label for="contactPref">Preferred contact</label>
+                    <select class="control" id="contactPref" name="contact_preference">
+                      <option value="">No preference</option>
+                      <option value="Text">Text</option>
+                      <option value="Instagram">Instagram</option>
+                    </select>
+                    <div class="inline-note">Ashlee will try this first.</div>
+                  </div>
+
+                  <div class="field">
+                    <label for="service">Service (recommended)</label>
+                    <select class="control" id="service" name="service">
+                      <option value="">Pick one (optional)</option>
+                      <option value="Gel manicure">Gel manicure</option>
+                      <option value="Acrylic full set">Acrylic full set</option>
+                      <option value="Fill">Fill</option>
+                      <option value="French / clean design">French / clean design</option>
+                      <option value="Nail art / custom">Nail art / custom</option>
+                      <option value="Removal needed">Removal needed</option>
+                      <option value="Not sure">Not sure</option>
+                    </select>
+                  </div>
+
+                  <div class="field">
+                    <label for="availability">Availability (optional)</label>
+                    <input class="control" id="availability" name="availability" type="text" placeholder="e.g., Thu after 4, Sat morning" />
+                  </div>
+
+                  <div class="field">
+                    <label for="notes">Notes (optional)</label>
+                    <textarea class="control" id="notes" name="notes" placeholder="Current set? removal? shape/length? inspo details?"></textarea>
+                  </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="privacy" aria-label="Privacy note">
+                  <strong>Privacy note:</strong> We collect your name + contact (phone or Instagram) to connect you with Ashlee and recommend the right clinic service.
+                  We do not sell your information.
+                </div>
+
+                <div class="help">
+                  <div class="hint" id="contactHint">
+                    Required: <strong style="color:var(--text)">name</strong> + <strong style="color:var(--text)">phone or Instagram</strong>.
+                  </div>
+                </div>
+
+                <div class="inline-error" id="err_contact">Please add a phone number or Instagram handle.</div>
+
+                <div class="row">
+                  <button class="btn primary" id="submitBtn" type="submit">Send request</button>
+                  <span class="hint" id="cooldownHint" style="display:none;">Please wait…</span>
+                </div>
+
+                <div id="formMsg" style="margin-top:10px;"></div>
+
+                <div class="msg" style="margin-top:10px;">
+                  <strong>Clinic-only reminder:</strong> Submitting this request is not an appointment booking. After Ashlee reaches out, call (435) 752-3599 (or book online) and request Ashlee Christensen.
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-body" style="padding-top:0;">
+        <div class="cta-row" style="padding: 0 14px 14px;">
+          <a class="btn ghost" href="https://www.instagram.com/ashes_nails_/" target="_blank" rel="noopener">Follow on Instagram</a>
+          <a class="btn" href="https://www.instagram.com/ashes_nails_/" target="_blank" rel="noopener">DM Ashlee</a>
+          <button class="btn" id="closeChat2" type="button">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function(){
+      const IG_HANDLE = "ashes_nails_"; // TODO: replace with real handle (no @)
+      const IG_URL = "https://www.instagram.com/ashes_nails_/";
+      const IG_DM_URL = "https://www.instagram.com/ashes_nails_/";
+
+      // Wire IG CTAs
+      const follow = document.getElementById('followInstagram');
+      const dm = document.getElementById('dmInstagram');
+      if (follow) follow.href = IG_URL;
+      if (dm) dm.href = IG_DM_URL;
+
+      // Modal controls
+      const backdrop = document.getElementById('chatBackdrop');
+      const openers = [
+        document.getElementById('openChatTop'),
+        document.getElementById('openChatHero'),
+        document.getElementById('openChatCard'),
+        document.getElementById('openChatBooking'),
+        document.getElementById('openChatTopMobile')
+      ].filter(Boolean);
+
+      const closeBtn = document.getElementById('closeChat');
+      const closeBtn2 = document.getElementById('closeChat2');
+
+      let lastActive = null;
+
+      const focusableSelector = [
+        'a[href]',
+        'button:not([disabled])',
+        'textarea:not([disabled])',
+        'input:not([disabled])',
+        'select:not([disabled])',
+        '[tabindex]:not([tabindex="-1"])'
+      ].join(',');
+
+      function getFocusable(){
+        const modal = backdrop.querySelector('.modal');
+        if (!modal) return [];
+        return Array.from(modal.querySelectorAll(focusableSelector))
+          .filter(el => el.offsetParent !== null && !el.hasAttribute('aria-hidden'));
+      }
+
+      function trapFocus(e){
+        if (e.key !== 'Tab') return;
+        const items = getFocusable();
+        if (!items.length) return;
+        const first = items[0];
+        const last = items[items.length - 1];
+        const active = document.activeElement;
+
+        if (e.shiftKey && active === first){
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && active === last){
+          e.preventDefault();
+          first.focus();
+        }
+      }
+
+      function openModal(){
+        lastActive = document.activeElement;
+        backdrop.dataset.open = "true";
+        backdrop.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        // Focus name input (conversion-friendly)
+        const name = document.getElementById('name');
+        setTimeout(() => { (name || closeBtn).focus(); }, 0);
+        document.addEventListener('keydown', trapFocus);
+      }
+
+      function closeModal(){
+        backdrop.dataset.open = "false";
+        backdrop.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        document.removeEventListener('keydown', trapFocus);
+        if (lastActive && typeof lastActive.focus === 'function') lastActive.focus();
+      }
+
+      openers.forEach(btn => btn.addEventListener('click', openModal));
+      closeBtn.addEventListener('click', closeModal);
+      closeBtn2.addEventListener('click', closeModal);
+
+      backdrop.addEventListener('click', (e) => { if (e.target === backdrop) closeModal(); });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && backdrop.dataset.open === "true") closeModal();
+      });
+
+      // Lead form logic
+      const form = document.getElementById('leadForm');
+      const submitBtn = document.getElementById('submitBtn');
+      const cooldownHint = document.getElementById('cooldownHint');
+      const formMsg = document.getElementById('formMsg');
+
+      const errName = document.getElementById('err_name');
+      const errContact = document.getElementById('err_contact');
+
+      const nameEl = document.getElementById('name');
+      const phoneEl = document.getElementById('phone');
+      const igEl = document.getElementById('instagram');
+      const serviceEl = document.getElementById('service');
+      const availEl = document.getElementById('availability');
+      const notesEl = document.getElementById('notes');
+      const contactPrefEl = document.getElementById('contactPref');
+      const hpCompanyEl = document.getElementById('hp_company');
+
+      let cooldownUntil = 0;
+      let inFlight = false;
+
+      function setMsg(html, kind){
+        if (!html){
+          formMsg.innerHTML = '';
+          return;
+        }
+        const cls = kind === 'good' ? 'msg good' : kind === 'bad' ? 'msg bad' : 'msg';
+        formMsg.innerHTML = '<div class="' + cls + '" role="status">' + html + '</div>';
+      }
+
+      function setErrors({name=false, contact=false}){
+        errName.dataset.show = name ? "true" : "false";
+        errContact.dataset.show = contact ? "true" : "false";
+      }
+
+      function isCooldown(){
+        return Date.now() < cooldownUntil;
+      }
+
+      function lockFor(ms){
+        cooldownUntil = Math.max(cooldownUntil, Date.now() + ms);
+        submitBtn.disabled = true;
+        cooldownHint.style.display = 'inline';
+        const tick = () => {
+          const remaining = cooldownUntil - Date.now();
+          if (remaining <= 0){
+            cooldownHint.style.display = 'none';
+            submitBtn.disabled = inFlight; // still disabled if in-flight
+            submitBtn.textContent = inFlight ? 'Sending…' : 'Send request';
+            return;
+          }
+          // Keep copy simple + clean
+          submitBtn.textContent = 'Please wait…';
+          setTimeout(tick, 200);
+        };
+        tick();
+      }
+
+      function normalizeInstagram(raw){
+        let v = (raw || '').trim();
+        if (!v) return '';
+        // If a URL is pasted, try extracting last path segment
+        try{
+          if (/instagram\.com/i.test(v) || /^https?:\/\//i.test(v)){
+            const u = new URL(v.startsWith('http') ? v : ('https://' + v));
+            const parts = u.pathname.split('/').filter(Boolean);
+            if (parts.length) v = parts[0];
+          }
+        }catch(e){ /* ignore */ }
+        // Remove leading @ then add a single @
+        v = v.replace(/^@+/, '');
+        if (!v) return '';
+        return '@' + v;
+      }
+
+      function applyVisualInstagramNormalization(){
+        const normalized = normalizeInstagram(igEl.value);
+        if (igEl.value.trim() && normalized){
+          igEl.value = normalized;
+        }
+      }
+
+      igEl.addEventListener('blur', applyVisualInstagramNormalization);
+
+      function buildPayload(){
+        const name = (nameEl.value || '').trim();
+        const phone = (phoneEl.value || '').trim(); // preserve formatting
+        const instagram = normalizeInstagram(igEl.value);
+        const service = (serviceEl.value || '').trim();
+        const availability = (availEl.value || '').trim();
+        const notes = (notesEl.value || '').trim();
+        const contact_preference = (contactPrefEl.value || '').trim();
+
+        const payload = { name };
+        if (phone) payload.phone = phone;
+        if (instagram) payload.instagram = instagram;
+        if (service) payload.service = service;
+        if (availability) payload.availability = availability;
+        if (notes) payload.notes = notes;
+        if (contact_preference) payload.contact_preference = contact_preference;
+        return payload;
+      }
+
+      function appendChatBubble(text, who){
+        const log = document.getElementById('chatLog');
+        if (!log) return;
+        const div = document.createElement('div');
+        div.className = 'bubble' + (who === 'you' ? ' you' : '');
+        div.textContent = text;
+        log.appendChild(div);
+        log.scrollTop = log.scrollHeight;
+      }
+
+      async function submitLead(e){
+        e.preventDefault();
+
+        // Honeypot: if filled, do not submit; show a "thanks" silently
+        if (hpCompanyEl && (hpCompanyEl.value || '').trim()){
+          setErrors({name:false, contact:false});
+          setMsg("Thanks — we’ll be in touch.", "good");
+          appendChatBubble("Thanks — you’re in. (Next step: book through the Paul Mitchell clinic process.)", "bot");
+          return;
+        }
+
+        // Cooldown guard
+        if (isCooldown() || inFlight){
+          return;
+        }
+
+        applyVisualInstagramNormalization();
+
+        const name = (nameEl.value || '').trim();
+        const phone = (phoneEl.value || '').trim();
+        const instagram = normalizeInstagram(igEl.value);
+
+        const missingName = !name;
+        const missingContact = !(phone || instagram);
+
+        setErrors({name: missingName, contact: missingContact});
+        if (missingName || missingContact){
+          setMsg("", "");
+          return;
+        }
+
+        // 10s cooldown after click (required)
+        lockFor(10000);
+
+        inFlight = true;
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Sending…";
+        setMsg("Sending your request…", "");
+        appendChatBubble("Sending my details…", "you");
+
+        const payload = buildPayload();
+
+        try{
+          const res = await fetch('/.netlify/functions/leads-create', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          });
+
+          if (!res.ok){
+            let detail = "";
+            try{
+              const data = await res.json();
+              detail = data && (data.error || data.message) ? String(data.error || data.message) : "";
+            }catch(_){ /* ignore */ }
+
+            window.dispatchEvent(new CustomEvent("lead_submit_error", { detail: { status: res.status, detail } }));
+            throw new Error(detail || ("Request failed (" + res.status + ")"));
+          }
+
+          window.dispatchEvent(new CustomEvent("lead_submit_success"));
+
+          // Success UI
+          setErrors({name:false, contact:false});
+          setMsg(
+            "<strong>You’re in — Ashlee will reach out.</strong><br/>" +
+            "Next step: call <strong>(435) 752-3599</strong> (or book online) and request <strong>Ashlee Christensen</strong>.",
+            "good"
+          );
+appendChatBubble("You’re in — Ashlee will reach out.", "bot");
+          appendChatBubble("Next step: call (435) 752-3599 (or book online) and request Ashlee Christensen.", "bot");
+appendChatBubble("If you have inspo pics + current set/removal info, keep them handy.", "bot");
+
+          // Optional: reset non-contact fields to reduce friction for follow-ups
+          serviceEl.value = "";
+          availEl.value = "";
+          notesEl.value = "";
+
+        }catch(err){
+          window.dispatchEvent(new CustomEvent("lead_submit_error", { detail: { message: String(err && err.message ? err.message : err) } }));
+          setMsg(
+            "<strong>Sorry — something didn’t send.</strong><br/>" +
+            "Please try again in a moment, or DM Ashlee on Instagram.",
+            "bad"
+          );
+          appendChatBubble("Hmm — that didn’t send. Please try again, or DM Ashlee on Instagram.", "bot");
+        }finally{
+          inFlight = false;
+          // Button will re-enable after cooldown ends
+          if (!isCooldown()){
+            submitBtn.disabled = false;
+            submitBtn.textContent = "Send request";
+          }
+        }
+      }
+
+      form.addEventListener('submit', submitLead);
+    })();
+  </script>
+</body>
+</html>
