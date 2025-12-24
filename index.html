@@ -9,12 +9,12 @@
   <meta name="description" content="High-end nails in Logan, UT. Ashlee is a Paul Mitchell student—booking is through the Paul Mitchell clinic only. Use chat to get matched." />
 
   <!-- Canonical + Social Preview (placeholders you can swap) -->
-  <link rel="canonical" href="https://ashnails.netlify.app/" />
+  <link rel="canonical" href="https://example.com/" />
 
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Ashlee Nails | Logan, UT" />
   <meta property="og:description" content="High-end nails in Logan, UT. Paul Mitchell clinic booking only. Use chat to get matched in under a minute." />
-  <meta property="og:url" content="https://ashnails.netlify.app/" />
+  <meta property="og:url" content="https://example.com/" />
   <meta property="og:image" content="https://example.com/assets/og-image.jpg" />
 
   <meta name="twitter:card" content="summary_large_image" />
@@ -398,11 +398,6 @@
     }
     .modal-backdrop[data-open="true"]{ display:flex; }
 
-/* Also support class-based open state + prevent hidden backdrop from capturing clicks */
-.modal-backdrop{ pointer-events: none; }
-.modal-backdrop[data-open="true"], .modal-backdrop.is-open{ pointer-events: auto; }
-.modal-backdrop.is-open{ display:flex; }
-
     .modal{
       width: 100%;
       max-width: 760px;
@@ -647,7 +642,207 @@
     @media (prefers-reduced-motion: reduce){
       *{ transition: none !important; scroll-behavior: auto !important; }
     }
-  </style>
+  
+    /* === HARD-LOCK MODAL OVERLAY (reliability) === */
+    #chatBackdrop{
+      position: fixed !important;
+      inset: 0 !important;
+      display: none !important;
+      align-items: center !important;
+      justify-content: center !important;
+      padding: 14px !important;
+      z-index: 99999 !important;
+      background: rgba(0,0,0,0.45) !important;
+      pointer-events: none !important;
+    }
+    #chatBackdrop[data-open="true"]{
+      display: flex !important;
+      pointer-events: auto !important;
+    }
+    #chatBackdrop .modal{
+      /* provide safe fallback if advanced color functions are unsupported */
+      background: #ffffff !important;
+      border: 1px solid var(--border) !important;
+      box-shadow: var(--shadow) !important;
+      width: min(760px, 100%) !important;
+      max-height: 85vh !important;
+      overflow: auto !important;
+    }
+
+  
+    /* ADMIN STYLE PARITY (index matches admin look & components) */
+    .top{
+      position: sticky; top: 10px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+      margin: 10px 10px 0;
+      z-index: 30;
+    }
+    .top .wrap{ padding: 12px 14px; }
+    .top .links a{ font-weight: 800; font-size: 13px; }
+    .top .brand h1{ font-weight: 950; letter-spacing: -0.02em; }
+    .top .brand p{ font-size: 12px; color: var(--muted); margin: 2px 0 0; }
+
+    .btn{
+      font-weight: 950;
+      font-size: 13px;
+      line-height: 1;
+      padding: 10px 12px;
+      transition: .15s;
+    }
+    .btn:hover{ transform: translateY(-1px); }
+    .btn:active{ transform: translateY(0); }
+
+    .card{
+      border-radius: var(--radius);
+      box-shadow: none;
+      padding: 12px;
+    }
+
+    input, textarea, select{
+      border-radius: 14px;
+      font-size: 13px;
+    }
+
+  
+/* ============================
+   ADMIN SKIN OVERRIDES (index)
+   Goal: match admin.html dark/glass UI without changing copy or structure.
+   ============================ */
+:root{
+  --bg: #0b0d12;
+  --surface: rgba(255,255,255,.06);
+  --surface2: rgba(255,255,255,.08);
+  --text: rgba(255,255,255,.92);
+  --muted: rgba(255,255,255,.68);
+  --border: rgba(255,255,255,.12);
+  --accent: #9173ff;
+  --accent2: #ffbb7d;
+  --good: #2ecc71;
+  --warn: #f39c12;
+  --bad: #e74c3c;
+  --shadow: 0 12px 38px rgba(0,0,0,.55);
+  --radius: 18px;
+  --radius2: 26px;
+  --focus: 0 0 0 3px rgba(255,255,255,.18), 0 0 0 6px rgba(145,115,255,.22);
+}
+
+/* Canvas */
+html, body{background: var(--bg); color: var(--text);}
+body{
+  background:
+    radial-gradient(1200px 800px at 30% -10%, rgba(124,92,255,.20), transparent 55%),
+    radial-gradient(900px 600px at 90% 10%, rgba(46,204,113,.12), transparent 50%),
+    var(--bg);
+}
+a{color: var(--text);}
+a:hover{opacity:.92}
+.small, .muted{color: var(--muted);}
+
+/* Top bar */
+header.top{position:sticky; top:0; z-index:40; background: transparent; border:0; backdrop-filter:none;}
+header.top .nav{
+  margin-top:10px;
+  padding:12px 14px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(10px);
+}
+header.top .brand h1{color: var(--text);}
+header.top .brand p{color: var(--muted);}
+header.top .links a{color: var(--muted);}
+header.top .links a:hover{color: var(--text);}
+
+/* Surfaces */
+.card, .tile, .callout, .faq, .steps, .step, .row, .bubble, .chat-shell{
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(10px);
+}
+.section-head p, .card p, .tile p, .callout p, .faq p{color: var(--muted);}
+
+/* Inputs */
+input, textarea, select{
+  background: rgba(255,255,255,.05) !important;
+  border: 1px solid rgba(255,255,255,.14) !important;
+  color: var(--text) !important;
+}
+input::placeholder, textarea::placeholder{color: rgba(255,255,255,.55) !important;}
+input:focus, textarea:focus, select:focus{outline:none; box-shadow: var(--focus);}
+
+/* Buttons */
+.btn{
+  appearance:none;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  padding:10px 12px;
+  border-radius: 14px;
+  cursor:pointer;
+  font-weight:950;
+  font-size:13px;
+  line-height:1;
+  transition:.15s;
+}
+.btn:hover{transform: translateY(-1px);}
+.btn.primary{
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  border-color: var(--border);
+  color: rgba(0,0,0,.88);
+}
+.btn.primary:hover{filter: brightness(1.02);}
+
+/* Section spacing on dark */
+main.wrap{padding-top: 14px;}
+section{scroll-margin-top: 120px;}
+h2,h3,h4{color: var(--text);}
+hr{border-color: rgba(255,255,255,.10);}
+
+/* Chat modal/backdrop */
+.modal-backdrop{background: rgba(0,0,0,.55) !important;}
+.chat-shell{background: var(--surface) !important;}
+.chat-topbar{background: var(--surface2) !important; border-bottom: 1px solid var(--border) !important;}
+
+</style>
+
+<style id="admin-chat-skin-overrides">
+  /* Hard overrides to ensure the chat modal stays in the same dark/glass system even in environments
+     where advanced color functions may not compute as expected. */
+  .modal{
+    background: rgba(11,13,18,.94) !important;
+    box-shadow: var(--shadow) !important;
+  }
+  .modal-body{ background: transparent !important; }
+  #nail-bot{ background: transparent !important; }
+
+  .chat-shell{
+    background: rgba(255,255,255,.06) !important;
+    border: 1px solid rgba(255,255,255,.12) !important;
+  }
+  .chat-topbar{
+    background: rgba(255,255,255,.08) !important;
+  }
+  .chat-log{ background: transparent !important; }
+  .bubble{
+    background: rgba(255,255,255,.06) !important;
+  }
+  .chat-input{
+    background: rgba(11,13,18,.55) !important;
+  }
+  .control{
+    background: rgba(255,255,255,.06) !important;
+    color: var(--text) !important;
+  }
+  .control::placeholder{ color: rgba(255,255,255,.55) !important; }
+</style>
+
 </head>
 
 <body>
@@ -671,7 +866,7 @@
         </nav>
 
         <!-- Mobile: single primary button -->
-        <button class="btn primary" id="openChatTopMobile" type="button">Chat to get matched</button>
+        <button class="btn primary" id="openChatTopMobile" type="button" style="display:inline-flex;">Chat to get matched</button>
       </div>
     </div>
   </header>
@@ -839,7 +1034,7 @@
         </div>
 
         <div class="cta-row" style="margin-top:12px; padding: 0 16px 16px;">
-          <a class="btn" href="https://paulmitchell.edu/logan" target="_blank" rel="noopener">Paul Mitchell Logan — Book a Service</a>
+          <a class="btn" href="https://example.com/" target="_blank" rel="noopener">Paul Mitchell Logan — Book a Service</a>
           <a class="btn ghost" href="tel:+14357523599">Call (435) 752-3599</a>
           <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Paul%20Mitchell%20The%20School%20Logan%2C%20185%20E%201250%20N%20Ste.%20200%2C%20Logan%2C%20UT%2084341" target="_blank" rel="noopener">Get directions</a>
         </div>
@@ -976,13 +1171,19 @@
             </div>
 
             <div class="chat-input">
+              <div class="chat-compose" aria-label="Chat input">
+                <input id="chatInput" class="control" type="text" autocomplete="off" placeholder="Type your answer…" />
+                <button id="chatSend" class="btn primary" type="button">Send</button>
+              </div>
+
+
               <form id="leadForm" novalidate>
                 <!-- Honeypot: bots fill this -->
                 <div class="hp" aria-hidden="true">
-                  <label>Company <input type="text" name="company" id="hp_company" autocomplete="off" tabindex="-1" /></label>
+                  <label>Company <input type="text" name="hp" id="hp" autocomplete="off" tabindex="-1" /></label>
                 </div>
 
-                <div class="form-grid">
+                <div class="form-grid" style="display:none">
                   <div class="field">
                     <label for="name">Name <span style="color:var(--warn)">*</span></label>
                     <input class="control" id="name" name="name" type="text" autocomplete="name" placeholder="Your name" required />
@@ -1079,7 +1280,7 @@
 
   <script>
     (function(){
-      const IG_HANDLE = "ashes_nails_"; // TODO: replace with real handle (no @)
+      const IG_HANDLE = "ashes_nails_";
       const IG_URL = "https://www.instagram.com/ashes_nails_/";
       const IG_DM_URL = "https://www.instagram.com/ashes_nails_/";
 
@@ -1140,10 +1341,18 @@
       function openModal(){
         lastActive = document.activeElement;
         backdrop.dataset.open = "true";
-        backdrop.classList.add("is-open");
-        // Inline fallback in case CSS attribute selectors are blocked/overridden
-        backdrop.style.display = "flex";
         backdrop.setAttribute('aria-hidden', 'false');
+
+        // Inline-style fallback (guards against any CSS override issues)
+        backdrop.style.display = 'flex';
+        backdrop.style.position = 'fixed';
+        backdrop.style.inset = '0';
+        backdrop.style.zIndex = '99999';
+        backdrop.style.alignItems = 'center';
+        backdrop.style.justifyContent = 'center';
+        backdrop.style.background = 'rgba(0,0,0,0.45)';
+        backdrop.style.pointerEvents = 'auto';
+
         document.body.style.overflow = 'hidden';
         // Focus name input (conversion-friendly)
         const name = document.getElementById('name');
@@ -1153,15 +1362,24 @@
 
       function closeModal(){
         backdrop.dataset.open = "false";
-        backdrop.classList.remove("is-open");
-        backdrop.style.display = "";
         backdrop.setAttribute('aria-hidden', 'true');
+
+        // Clear inline fallback styles
+        backdrop.style.display = '';
+        backdrop.style.position = '';
+        backdrop.style.inset = '';
+        backdrop.style.zIndex = '';
+        backdrop.style.alignItems = '';
+        backdrop.style.justifyContent = '';
+        backdrop.style.background = '';
+        backdrop.style.pointerEvents = '';
+
         document.body.style.overflow = '';
         document.removeEventListener('keydown', trapFocus);
         if (lastActive && typeof lastActive.focus === 'function') lastActive.focus();
       }
 
-      openers.forEach(btn => btn.addEventListener('click', (e) => { e.preventDefault(); openModal(); }));
+      openers.forEach(btn => btn.addEventListener('click', (e)=>{ e.preventDefault(); openModal(); }));
       closeBtn.addEventListener('click', closeModal);
       closeBtn2.addEventListener('click', closeModal);
 
@@ -1186,7 +1404,7 @@
       const availEl = document.getElementById('availability');
       const notesEl = document.getElementById('notes');
       const contactPrefEl = document.getElementById('contactPref');
-      const hpCompanyEl = document.getElementById('hp_company');
+      const hpEl = document.getElementById('hp');
 
       let cooldownUntil = 0;
       let inFlight = false;
@@ -1262,8 +1480,9 @@
         const availability = (availEl.value || '').trim();
         const notes = (notesEl.value || '').trim();
         const contact_preference = (contactPrefEl.value || '').trim();
+        const hp = (hpEl && hpEl.value ? String(hpEl.value) : '').trim();
 
-        const payload = { name };
+        const payload = { name, hp: hp || "" };
         if (phone) payload.phone = phone;
         if (instagram) payload.instagram = instagram;
         if (service) payload.service = service;
@@ -1287,7 +1506,7 @@
         e.preventDefault();
 
         // Honeypot: if filled, do not submit; show a "thanks" silently
-        if (hpCompanyEl && (hpCompanyEl.value || '').trim()){
+        if (hpEl && (hpEl.value || '').trim()){
           setErrors({name:false, contact:false});
           setMsg("Thanks — we’ll be in touch.", "good");
           appendChatBubble("Thanks — you’re in. (Next step: book through the Paul Mitchell clinic process.)", "bot");
@@ -1378,6 +1597,170 @@ appendChatBubble("If you have inspo pics + current set/removal info, keep them h
           }
         }
       }
+
+
+
+      
+      // --- Conversational chat flow (mounts into #nail-bot) ---
+      const chatInputEl = document.getElementById('chatInput');
+      const chatSendEl = document.getElementById('chatSend');
+
+      const state = { step: 0, contactPref: '' };
+
+      function botSay(text){ appendChatBubble(text, "bot"); }
+      function userSay(text){ appendChatBubble(text, "you"); }
+
+      function normalizePref(raw){
+        const s = String(raw || '').toLowerCase();
+        if (s.includes('insta') || s.includes('instagram') || s.includes('ig')) return 'instagram';
+        if (s.includes('text') || s.includes('sms') || s.includes('phone') || s.includes('call')) return 'phone';
+        return '';
+      }
+
+      function mentionsSet(raw){
+        const s = String(raw || '').toLowerCase();
+        if (s.includes('bare') || s.includes('none') || s.includes('no')) return 'bare';
+        if (s.includes('gel')) return 'gel';
+        if (s.includes('acrylic')) return 'acrylic';
+        if (s.includes('dip')) return 'dip';
+        if (s.includes('builder') || s.includes('biab')) return 'builder';
+        if (s.includes('overlay')) return 'overlay';
+        return 'set';
+      }
+
+      function setNotesLine(label, value){
+        const line = (label + ": " + String(value || '').trim()).trim();
+        const prev = (notesEl.value || '').trim();
+        notesEl.value = prev ? (prev + "\n" + line) : line;
+      }
+
+      function askNext(){
+        if (state.step === 0){
+          botSay("What are you thinking for your nails? (Soft neutrals / French / glossy / statement — anything is fine.)");
+          return;
+        }
+        if (state.step === 1){
+          botSay("Do you currently have a set on? (gel / acrylic / dip / bare)");
+          return;
+        }
+        if (state.step === 2){
+          botSay("Will you need removal?");
+          return;
+        }
+        if (state.step === 3){
+          botSay("When are you hoping to come in? (ASAP / this week / next 1–2 weeks / flexible)");
+          return;
+        }
+        if (state.step === 4){
+          botSay("How should Ashlee reach out — text (phone) or Instagram DM?");
+          return;
+        }
+        if (state.step === 5){
+          if (state.contactPref === 'instagram'){
+            botSay("What’s your Instagram handle?");
+          } else {
+            botSay("What’s the best number to text you?");
+          }
+          return;
+        }
+        if (state.step === 6){
+          botSay("And what’s your name?");
+          return;
+        }
+      }
+
+      askNext();
+
+      async function handleChatSend(){
+        if (!chatInputEl || !chatSendEl) return;
+        const raw = (chatInputEl.value || '').trim();
+        if (!raw) return;
+
+        chatInputEl.value = "";
+        userSay(raw);
+
+        // Step machine
+        if (state.step === 0){
+          serviceEl.value = raw;
+          state.step = 1; askNext(); return;
+        }
+
+        if (state.step === 1){
+          const setType = mentionsSet(raw);
+          setNotesLine("Current set", raw);
+          if (setType === 'bare'){
+            state.step = 3; askNext();
+          } else {
+            state.step = 2; askNext();
+          }
+          return;
+        }
+
+        if (state.step === 2){
+          setNotesLine("Needs removal", raw);
+          state.step = 3; askNext(); return;
+        }
+
+        if (state.step === 3){
+          availEl.value = raw;
+          state.step = 4; askNext(); return;
+        }
+
+        if (state.step === 4){
+          const pref = normalizePref(raw);
+          if (!pref){
+            botSay("Quick check — do you prefer text (phone) or Instagram DM?");
+            return;
+          }
+          state.contactPref = pref;
+          contactPrefEl.value = pref;
+          state.step = 5; askNext(); return;
+        }
+
+        if (state.step === 5){
+          if (state.contactPref === 'instagram'){
+            igEl.value = raw;
+            applyVisualInstagramNormalization();
+          } else {
+            phoneEl.value = raw;
+          }
+          state.step = 6; askNext(); return;
+        }
+
+        if (state.step === 6){
+          nameEl.value = raw;
+          botSay("Thanks — sending this to Ashlee now.");
+
+          if (form.requestSubmit){
+            form.requestSubmit(submitBtn);
+          } else {
+            submitBtn.click();
+          }
+
+          chatInputEl.disabled = true;
+          chatSendEl.disabled = true;
+          chatInputEl.placeholder = "Sent — thank you.";
+          return;
+        }
+      }
+
+      if (chatSendEl){
+        chatSendEl.addEventListener('click', handleChatSend);
+      }
+      if (chatInputEl){
+        chatInputEl.addEventListener('keydown', function(e){
+          if (e.key === 'Enter'){
+            e.preventDefault();
+            handleChatSend();
+          }
+        });
+      }
+
+      window.addEventListener("lead_submit_error", function(){
+        if (chatInputEl){ chatInputEl.disabled = false; chatInputEl.placeholder = "Type your answer…"; }
+        if (chatSendEl){ chatSendEl.disabled = false; }
+      });
+
 
       form.addEventListener('submit', submitLead);
     })();
