@@ -1,0 +1,14 @@
+
+/* Portfolio image fit improvements */
+.portfolio-card {
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+}
+
+.portfolio-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  border-radius: 14px;
+}
