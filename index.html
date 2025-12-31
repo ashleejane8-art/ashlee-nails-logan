@@ -279,6 +279,26 @@
       border-radius: 999px;
       backdrop-filter: blur(10px);
     }
+
+  .thumb.has-photo{background-size:cover;background-position:center;background-repeat:no-repeat;}
+  .thumb.has-photo::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 0%, rgba(0,0,0,.35) 100%);}
+  .thumb.has-photo > *{position:relative;z-index:1;}
+  .thumb.photo-soft{background-image:url("assets/portfolio/soft-neutral.jpg");}
+  .thumb.photo-french{background-image:url("assets/portfolio/french.jpg");}
+  .thumb.photo-chrome{background-image:url("assets/portfolio/chrome.jpg");}
+  .thumb.photo-seasonal{background-image:url("assets/portfolio/seasonal.jpg");}
+  .thumb.photo-gel{background-image:url("assets/portfolio/gel.jpg");}
+  .thumb.photo-art{background-image:url("assets/portfolio/art.jpg");}
+
+  .thumb.has-photo{background-size:cover;background-position:center;background-repeat:no-repeat;}
+  .thumb.has-photo::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.0) 0%, rgba(0,0,0,.35) 100%);}
+  .thumb.has-photo > *{position:relative;z-index:1;}
+  .thumb.photo-soft{background-image:url("assets/portfolio/soft-neutral.jpg");}
+  .thumb.photo-french{background-image:url("assets/portfolio/french.jpg");}
+  .thumb.photo-chrome{background-image:url("assets/portfolio/chrome.jpg");}
+  .thumb.photo-seasonal{background-image:url("assets/portfolio/seasonal.jpg");}
+  .thumb.photo-gel{background-image:url("assets/portfolio/gel.jpg");}
+  .thumb.photo-art{background-image:url("assets/portfolio/art.jpg");}
     .tile h4{ margin: 12px 2px 4px; font-size: 14px; }
     .tile p{ margin: 0 2px 2px; color: var(--muted); font-size: 13px; line-height: 1.45; }
 
@@ -516,7 +536,7 @@
       display:flex;
       flex-direction: column;
       gap: 10px;
-      background: rgba(16,18,24,.65);
+      background: color-mix(in srgb, var(--bg) 40%, transparent);
     }
 
     .form-grid{ display:grid; grid-template-columns: 1fr; gap: 10px; }
@@ -659,9 +679,8 @@
       pointer-events: auto !important;
     }
     #chatBackdrop .modal{
-      color: rgba(255,255,255,.92) !important;
       /* provide safe fallback if advanced color functions are unsupported */
-      background: rgba(16,18,24,.92) !important;
+      background: #ffffff !important;
       border: 1px solid var(--border) !important;
       box-shadow: var(--shadow) !important;
       width: min(760px, 100%) !important;
@@ -811,50 +830,17 @@ hr{border-color: rgba(255,255,255,.10);}
 .chat-topbar{background: var(--surface2) !important; border-bottom: 1px solid var(--border) !important;}
 
 
-    /* CHAT READABILITY PATCH */
-    #chatBackdrop .modal{
-      backdrop-filter: blur(10px) !important;
-      -webkit-backdrop-filter: blur(10px) !important;
-    }
-    #chatBackdrop .modal a{ color: rgba(255,255,255,.92); }
-    .chat-shell{ background: rgba(10,12,18,.55); }
-    .chat-log{ background: transparent; }
-    .chat-log .msg{ backdrop-filter: none; -webkit-backdrop-filter: none; }
-    .chat-log .msg.user{
-      background: rgba(145,115,255,.20);
-      border-color: rgba(145,115,255,.32);
-    }
-    .chat-log .msg.assistant{
-      background: rgba(255,255,255,.06);
-    }
-    .chat-input input, .chat-input textarea{
-      background: rgba(255,255,255,.06);
-      color: rgba(255,255,255,.92);
-      border: 1px solid rgba(255,255,255,.14);
-      border-radius: 14px;
-      padding: 10px 12px;
-    }
-    .chat-input input::placeholder, .chat-input textarea::placeholder{
-      color: rgba(255,255,255,.55);
-    }
-    .chat-input input:focus, .chat-input textarea:focus{
-      outline: none;
-      border-color: rgba(145,115,255,.55);
-      box-shadow: 0 0 0 3px rgba(145,115,255,.18);
-    }
-    .chat-input button{
-      color: rgba(255,255,255,.92);
-      border: 1px solid rgba(255,255,255,.14);
-      background: rgba(145,115,255,.22);
-    }
-    .chat-input button:hover{
-      background: rgba(145,115,255,.30);
-    }
-    #chatBackdrop .modal ::-webkit-scrollbar{ width: 10px; }
-    #chatBackdrop .modal ::-webkit-scrollbar-thumb{ background: rgba(255,255,255,.14); border-radius: 999px; }
-    #chatBackdrop .modal ::-webkit-scrollbar-track{ background: rgba(255,255,255,.04); }
-
-  </style>
+  /* Portfolio tile photos */
+  .thumb.has-photo{background-size:cover;background-position:center;background-repeat:no-repeat;}
+  .thumb.has-photo::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 0%, rgba(0,0,0,.35) 100%);}
+  .thumb.has-photo > *{position:relative;z-index:1;}
+  .thumb.photo-soft{background-image:url("assets/portfolio/soft-neutral.jpg");}
+  .thumb.photo-french{background-image:url("assets/portfolio/french.jpg");}
+  .thumb.photo-chrome{background-image:url("assets/portfolio/chrome.jpg");}
+  .thumb.photo-seasonal{background-image:url("assets/portfolio/seasonal.jpg");}
+  .thumb.photo-gel{background-image:url("assets/portfolio/gel.jpg");}
+  .thumb.photo-art{background-image:url("assets/portfolio/art.jpg");}
+</style>
 
 <style id="admin-chat-skin-overrides">
   /* Hard overrides to ensure the chat modal stays in the same dark/glass system even in environments
@@ -878,7 +864,7 @@ hr{border-color: rgba(255,255,255,.10);}
     background: rgba(255,255,255,.06) !important;
   }
   .chat-input{
-    background: rgba(16,18,24,.65);
+    background: rgba(11,13,18,.55) !important;
   }
   .control{
     background: rgba(255,255,255,.06) !important;
@@ -987,37 +973,37 @@ hr{border-color: rgba(255,255,255,.10);}
 
       <div class="grid" role="list">
         <article class="tile" role="listitem">
-          <div class="thumb" aria-label="Portfolio placeholder image"><span>Soft neutral</span><span>Short</span></div>
+          <div class="thumb has-photo photo-soft" aria-label="Soft neutral nails photo"><span>Soft neutral</span><span>Short</span></div>
           <h4>Clean nude set</h4>
           <p>Simple, glossy, and flattering—perfect for everyday.</p>
         </article>
 
         <article class="tile" role="listitem">
-          <div class="thumb" aria-label="Portfolio placeholder image"><span>French</span><span>Almond</span></div>
+          <div class="thumb has-photo photo-french" aria-label="French nails photo"><span>French</span><span>Almond</span></div>
           <h4>Modern French</h4>
           <p>Crisp linework and balanced proportions.</p>
         </article>
 
         <article class="tile" role="listitem">
-          <div class="thumb" aria-label="Portfolio placeholder image"><span>Chrome</span><span>Medium</span></div>
+          <div class="thumb has-photo photo-chrome" aria-label="Chrome nails photo"><span>Chrome</span><span>Medium</span></div>
           <h4>Glass chrome</h4>
           <p>High shine with an elevated, minimal finish.</p>
         </article>
 
         <article class="tile" role="listitem">
-          <div class="thumb" aria-label="Portfolio placeholder image"><span>Seasonal</span><span>Short</span></div>
+          <div class="thumb has-photo photo-seasonal" aria-label="Seasonal nails photo"><span>Seasonal</span><span>Short</span></div>
           <h4>Seasonal accent</h4>
           <p>Subtle accent nail for holidays and events.</p>
         </article>
 
         <article class="tile" role="listitem">
-          <div class="thumb" aria-label="Portfolio placeholder image"><span>Gel</span><span>Natural</span></div>
+          <div class="thumb has-photo photo-gel" aria-label="Gel overlay nails photo"><span>Gel</span><span>Natural</span></div>
           <h4>Natural gel overlay</h4>
           <p>Strength + structure without going extra long.</p>
         </article>
 
         <article class="tile" role="listitem">
-          <div class="thumb" aria-label="Portfolio placeholder image"><span>Art</span><span>Custom</span></div>
+          <div class="thumb has-photo photo-art" aria-label="Nail art photo"><span>Art</span><span>Custom</span></div>
           <h4>Minimal line art</h4>
           <p>Small details that read expensive, not busy.</p>
         </article>
