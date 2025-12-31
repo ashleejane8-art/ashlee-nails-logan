@@ -1,14 +1,76 @@
-
-/* Portfolio image fit improvements */
-.portfolio-card {
-  aspect-ratio: 4 / 5;
+/* Portfolio image display - make nails easier to see */
+.portfolio-card{
+  /* Square tiles = larger subject + consistent grid */
+  aspect-ratio: 1 / 1;
   overflow: hidden;
+  position: relative;
+  border-radius: 14px;
 }
 
-.portfolio-card img {
+/* Default: zoom slightly so nails are more visible */
+.portfolio-card img{
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 30%;
+  object-position: center;
+  transform: scale(1.10);
+  transition: transform 180ms ease;
   border-radius: 14px;
+}
+
+/* Optional hover emphasis (desktop only) */
+@media (hover:hover){
+  .portfolio-card:hover img{ transform: scale(1.14); }
+  .portfolio-card:hover::after{
+    content: "Click to zoom";
+    position:absolute;
+    right:12px; bottom:12px;
+    padding:6px 10px;
+    font-size:12px;
+    background: rgba(0,0,0,.55);
+    color:#fff;
+    border-radius:999px;
+  }
+}
+
+/* If a particular image crops wrong, add class "fit-contain" to that card */
+.portfolio-card.fit-contain img{
+  object-fit: contain;
+  transform: none;
+  background: #0b0f14;
+}
+
+/* ---- Lightbox (full-size view on click) ---- */
+.lightbox{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.85);
+  display: grid;
+  place-items: center;
+  z-index: 9999;
+  padding: 24px;
+}
+.lightbox img{
+  max-width: min(100%, 1100px);
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 12px 40px rgba(0,0,0,.55);
+}
+.lightbox .close{
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.25);
+  background: rgba(0,0,0,.35);
+  color: #fff;
+  font-size: 22px;
+  line-height: 42px;
+  text-align: center;
+  cursor: pointer;
 }
